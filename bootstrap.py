@@ -33,7 +33,11 @@ lzfSeedRepo = github.get_repo("lzf-azure/lzf-seed")
 projectLzfRepoName = f"lzf-{args.projectId}-{args.projectName}"
 logging.info(f"will fork repository: {lzfSeedRepo.full_name} into : {args.organization}/{projectLzfRepoName}")
 projectLzfRepo = lzfSeedRepo.create_fork(organization=args.organization)
+
+# set the properties of the new repo
 projectLzfRepo.edit(name=projectLzfRepoName)
+projectLzfRepo.edit(delete_branch_on_merge=True)
+projectLzfRepo.enable_vulnerability_alert()
 
 
 
