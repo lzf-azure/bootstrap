@@ -52,7 +52,7 @@ def setupGithub(args, current_timestamp):
 def setupTfe(args, current_timestamp):
     logging.info("Logging in to TFE org: %s", args.tfeOrganization)
     client = pyterprise.Client()
-    client.init(config("TFE_ORG_TOKEN"), url='https://app.terraform.io')
+    client.init(config("TFE_USER_TOKEN"), url='https://app.terraform.io')
     org = client.set_organization(id=args.tfeOrganization)
 
     logging.info("Existing TFE Workspaces:  %s", len(org.list_workspaces()))

@@ -8,6 +8,8 @@ Bootstrap scripts for LZ Project creation
 * `export GH_PAT=ghp_lRydJ...`
 
 # Manual setup TFE
+* set up your TFE user token
+`export TFE_USER_TOKEN=123.atlasv1.456`
 * create a new TFE Organization, eg `lzf-test-123`
 This will be the organization, where TFE will be hosting the workspaces for the GH repositories
 * create the Terraform Enterprise Organization Token TFE_ORG_TOKEN as Organization -> Settings -> API Token -> Create Organization Token.
